@@ -49,11 +49,11 @@ Port	Service	Risk
 
 Files Included
 
-nmap/task1nmap.txt – Nmap scan result file
+nmap/task1.txt – Nmap scan result file
 
-nmap/image-nmap-syn.png – Nmap scan result in Wireshark
+Inside Wireshark Folder---
 
-wireshark/img1.png, wireshark/img2.png, wireshark/img3.png – Wireshark screenshots
+img1.png, img2.png, img3.png – Wireshark screenshots
 
 README.md – This documentation
 
