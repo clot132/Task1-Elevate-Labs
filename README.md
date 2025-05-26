@@ -1,13 +1,59 @@
-# Task1-Elevate-Labs
-1. First i installed nmap with sudo apt install nmap
-2. then i used ifconfig to check my ip address for eth0 vmware machine which was inet 192.X.X.X
-3. I ran the command of nmap Tcp Syn scan which was sudo (because i was not root user here) nmap -sS ip address -oN(write it to a file) task1.txt
-4. You can see the task1.txt scan results as for my vmware i found my port 53/tcp open
-5. port 53 is usually used for running dns services and is vulnerable to dns amplification attacks
-6. After the nmap i i openend by wireshark which required me to enter the user password to launch
-7. As in my wireshark folder i have attached images of my results
-8. i started my eth0 interface which will start analyzing it on my ip address
-9. In img1 i started wireshark and in img2 my interface has just started and is not receiving any packets because i have not yet started my browser
-10. by starting my firefox browser in kali i have initiated it to start capturing the packets which are going in and on from my computer
-11. img3 justifies the packet analyzing
-    
+Task 1: Scan Your Local Network for Open Ports
+Objective: Learn to discover open ports on devices in your local network to understand network exposure.
+Tools: Nmap (free), Wireshark (optional)
+
+1. Installed Nmap using the command:
+      sudo apt install nmap
+
+2. Found the IP address of my local machine (VMware eth0 interface) using:
+      ifconfig
+
+      Identified the local IP as: 192.X.X.X
+
+3. Ran a TCP SYN scan on my own IP address using the following command (as a non-root user):
+      sudo nmap -sS 192.X.X.X -oN task1.txt
+
+      This saved the scan results to task1.txt.
+
+4. From the Nmap results, observed that only port 53/tcp was open.
+
+      Port 53 is used for DNS (Domain Name System) services.
+
+      It can be vulnerable to DNS amplification attacks if misconfigured or exposed.
+
+5.Opened Wireshark to analyze live packet traffic.
+
+ Required entering the user password to launch the tool.
+
+6. Started packet capture on the eth0 interface in Wireshark.
+
+      img1.png: Wireshark launched
+
+      img2.png: Interface started, no packets received (browser not yet opened)
+
+      img3.png: Firefox browser started, showing captured network packets
+
+7. Observed real-time network traffic using Wireshark to understand how browsing activity generates and sends packets.
+
+8. Scan results were saved in the task1.txt file for documentation and further analysis.
+
+Security Risk Summary
+
+
+The following port was found open and may pose a security risk:
+
+Port	Service	Risk
+53	DNS	Can be abused for amplification attacks
+
+
+
+Files Included
+
+nmap/task1nmap.txt – Nmap scan result file
+
+nmap/image-nmap-syn.png – Nmap scan result in Wireshark
+
+wireshark/img1.png, wireshark/img2.png, wireshark/img3.png – Wireshark screenshots
+
+README.md – This documentation
+
